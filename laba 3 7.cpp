@@ -1,36 +1,50 @@
-﻿using namespace std;
-#include <vector>
 #include <iostream>
 #include <string>
-int main() {
-	string str1;
-	string str2;
-	string str3;
-	getline(cin, str1);
-	getline(cin, str2);
-	getline(cin, str3);
-	vector<char> v1(str1.begin(), str1.end());
-	vector<char> v2(str2.begin(), str2.end());
-	vector<char> v3(str3.begin(), str3.end());
-	if (v1.size() == max(v1.size(), max(v2.size(), v3.size()))) {
-		cout<<"The largest: " << str1;
-	}
-	if (v2.size() == max(v1.size(), max(v2.size(), v3.size()))) {
-		cout << "The largest: " << str2;
+using namespace std;
+int main()
+{
+	string c1;
+	string c2;
+	string c3;//3 gorod
+	cin >> c1;
+	cin >> c2;
+	cin >> c3;
 
+	if (c1.length() > c2.length())
+	{
+		if (c1.length() > c3.length()) {
+			cout << "the_longest" << " "<<c1 << endl;
+		}
+		else {
+			cout << "the_longest" << " "<<c3 << endl;
+		}
 	}
-	if (v3.size() == max(v1.size(), max(v2.size(), v3.size()))) {
-		cout << "The largest: " << str3;
-	}
-	cout << endl;
-	if (v1.size() == min(v1.size(), min(v2.size(), v3.size()))) {
-		cout << "The shortest: " << str1;
-	}
-	if (v2.size() == min(v1.size(), min(v2.size(), v3.size()))) {
-		cout << "The shortest: " << str2;
-	}
-	if (v3.size() == min(v1.size(), min(v2.size(), v3.size()))) {
-		cout << "The shortest: " << str3;
+	else
+	{
+		if (c2.length() > c3.length()) {
+			cout << "the_longest" << " "<<c2 << endl;
+		}
+		else {
+			cout << "the_longest" << " "<<c3 << endl;
+		}
 	}
 
+	if (c1.length() < c2.length())
+	{
+		if (c1.length() < c3.length()) {
+			cout << "the_shortest" << " "<<c1 << endl;
+		}
+		else {
+			cout << "the_shortest" << " "<<c3 << endl;
+		}
+	}
+	else
+	{
+		if (c2.length() < c3.length()) {
+			cout << "the_shortest" << " "<<c2 << endl;
+		}
+		else {
+			cout << "the_shortest" << " "<<c3 << endl;
+		}
+	}
 }
